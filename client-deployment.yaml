@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment # deployment: runs multiple identical pod and manages Pods for us
+metadata:
+  name: client-deployment
+spec:
+  replicas: 1 # number of pods this deployment should make
+  selector:
+    matchLabels:
+      component: web
+  template:
+    metadata:
+      labels: #create the pod with this label
+        component: web
+    spec:
+      containers:
+        - name: client
+          image: khossain/multi-client
+          ports:
+            - containerPort: 3000

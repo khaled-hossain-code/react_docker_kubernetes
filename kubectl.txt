@@ -1,0 +1,11 @@
+kubectl apply -f <filename> (change the current cluster using the provided file)
+*for client-pod.yaml we have to run first then client-node-port.yaml have to run again
+kubectl get pods (prints status of a kind)
+kubectl get services
+minikube ip (shows the ip address of virtual machine)
+kubectl describe <object type> <object name> (ex: kubectl describe pod client-pod
+kubectl delete -f <config file> (ex: kubectl delete -f client-pod.yaml)
+
+******Deployments*******
+kubectl apply -f client-deployment.yaml
+kubectl get deployments

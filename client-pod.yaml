@@ -1,0 +1,15 @@
+apiVersion: v1
+# pod is required to run containers
+kind: Pod
+# deployment: runs multiple identical pod and manages Pods for us
+# kind: Pod, deployment, Services, Volume, Namespace, ReplicaSet....
+metadata:
+  name: client-pod
+  labels: # we could use any labels like tier:frontend
+    component: web
+spec:
+  containers:
+    - name: client
+      image: khossain/multi-client:latest
+      ports:
+        - containerPort: 3000
